@@ -1,0 +1,37 @@
+---
+import './showcase.css';
+import FWLogo from '../../images/framework-logos.png';
+import FWLogoSm from '../../images/framework-logos-small.png';
+
+export interface IProps {
+  heading: string;
+  subHeading: string;
+  showExtra?: boolean;
+}
+
+const { heading, subHeading, showExtra = true } = Astro.props as IProps;
+---
+
+<section class='showcase'>
+  <div class='showcase-text'>
+    <h1>{heading}</h1>
+    <p>
+      {subHeading}
+    </p>
+  </div>
+  {
+    showExtra && (
+      <>
+        <div class='showcase-img'>
+          <img class='logos' src={FWLogo} alt='' />
+          <img class='logos-small' src={FWLogoSm} alt='' />
+        </div>
+        <p class='showcase-demo'>
+          <small>
+            This is a demo website
+          </small>
+        </p>
+      </>
+    )
+  }
+</section>

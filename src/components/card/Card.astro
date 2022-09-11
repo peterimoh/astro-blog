@@ -1,0 +1,17 @@
+---
+import './card.css';
+
+export interface IProps {
+  data: {
+    label: string;
+    desc: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<div class='card'>
+  <h3>{data.label}</h3>
+  <p>{data.desc}</p>
+</div>
